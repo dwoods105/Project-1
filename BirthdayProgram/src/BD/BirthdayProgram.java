@@ -136,7 +136,7 @@ public class BirthdayProgram {
 	/**
 	 * This method takes a month number and returns a String of the
 	 * name of that month. 
-	 * January is 1 and Decemeber
+	 * January is 1 and December
 	 * Code referenced from : https://stackoverflow.com/questions/5799140/java-get-month-string-from-integer
 	 * 
 	 * @param Month 	number of month to convert to string
