@@ -19,7 +19,7 @@ public class StatsLib {
 	 * @return double Average of the data. 
 	 */
 	public double average(List<Integer> data) {
-		int total = 0;
+		double total = 0;
 		for(int i : data) { //iterate through the data
 			total += data.get(i); //add up all the data
 		}
@@ -39,7 +39,8 @@ public class StatsLib {
 			
 		}
 		else { //if the data has an even number
-			median=data.get((size/2))+data.get((size/2)-1); //return the average of the 2 middle
+			median = data.get((size/2))+data.get((size/2)-1);
+			median=median/2; //return the average of the 2 middle
 		}
 		return median;
 	}
@@ -65,7 +66,10 @@ public class StatsLib {
 		}
 		for(int i=0;i<data.size();i++){ //iterate through the array list of counts
 			if(counts.get(i)==largestCount){ //if there is a count that is equal to the number we know is the largest
+				if(modes.contains(data.get(i))){} //if it's already on there, we don't need to add it again
+				else{
 				modes.add(data.get(i)); //add it to the ArrayList of modes
+			}
 
 			}
 
@@ -124,7 +128,7 @@ public class StatsLib {
 			var = var*var; //square the data
 			varTotal += var; // add up all the total variences
 		}
-		return varTotal/data.size(); //return the newly calculated varience
+		return varTotal/(data.size()-1); //return the newly calculated varience
 
 	}
 	/**
@@ -141,6 +145,12 @@ public class StatsLib {
 			numerator += temp; //add it to the numerator
 		}
 		return Math.sqrt(numerator/(data.size()-1)); //square root of the numerator over the size of the array minus one
+
+	}
+
+	public String toString(List<Integer> data){
+		return "Average "+average(data)+"\n"+"Median "+median(data)+"\n"+"Mode "+mode(data)+"\n"+"Varience "+varience(data)+"\n"+"Standard Deviation "+stdDiv(data)+"\n"
+		+"8P2 "+permutations(8, 2)+"\n"+"8C2 "+combinations(8, 2);
 
 	}
 
