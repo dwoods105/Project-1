@@ -5,6 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
+/**
+ * @author Daniel Woods
+ * 
+ * This is an extra program I wrote for this class to generate the random CSV for the salter and Smoother
+ * 
+ */
+
 public class RandomCSV {
 	public RandomCSV(int rows, int maxNum, int minNum, String filename) {
 		int[] randRows = generateRandInt(rows, maxNum, minNum);
